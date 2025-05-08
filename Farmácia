@@ -1,0 +1,2032 @@
+<!DOCTYPE html>
+<html lang="pt-BR">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Farmácia UEL - Educação em Saúde</title>
+    
+    <!-- Bootstrap CSS -->
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.2.3/dist/css/bootstrap.min.css" rel="stylesheet">
+    
+    <!-- Font Awesome -->
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.2/css/all.min.css">
+    
+    <!-- Google Fonts -->
+    <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@300;400;500;600;700&family=Open+Sans:wght@400;600&display=swap" rel="stylesheet">
+    
+    <!-- AOS Animation -->
+    <link href="https://unpkg.com/aos@2.3.1/dist/aos.css" rel="stylesheet">
+    
+    <style>
+        :root {
+            --primary-color: #2c7d3f;
+            --secondary-color: #5cb85c;
+            --accent-color: #ffc107;
+            --light-color: #f8f9fa;
+            --dark-color: #343a40;
+            --text-color: #495057;
+            --white: #ffffff;
+            --font-primary: 'Poppins', sans-serif;
+            --font-secondary: 'Open Sans', sans-serif;
+        }
+        
+        body {
+            font-family: var(--font-secondary);
+            color: var(--text-color);
+            line-height: 1.6;
+            background-color: var(--light-color);
+            overflow-x: hidden;
+        }
+        
+        h1, h2, h3, h4, h5, h6 {
+            font-family: var(--font-primary);
+            font-weight: 600;
+        }
+        
+        /* Header Styles */
+        header {
+            background-color: var(--primary-color);
+            box-shadow: 0 2px 15px rgba(0, 0, 0, 0.1);
+            position: sticky;
+            top: 0;
+            z-index: 1000;
+            transition: all 0.3s ease;
+        }
+        
+        .navbar {
+            padding: 10px 0;
+        }
+        
+        .navbar-brand {
+            font-weight: 700;
+            display: flex;
+            align-items: center;
+            color: var(--white);
+        }
+        
+        .logo-text h1 {
+            color: var(--white);
+            font-size: 1.3rem;
+            margin-bottom: 0;
+            line-height: 1.2;
+        }
+        
+        .logo-text p {
+            color: rgba(255, 255, 255, 0.85);
+            font-size: 0.7rem;
+            margin-bottom: 0;
+        }
+        
+        .nav-link {
+            color: rgba(255, 255, 255, 0.85) !important;
+            font-weight: 500;
+            padding: 8px 15px !important;
+            transition: all 0.3s ease;
+            border-radius: 50px;
+            margin: 0 3px;
+            font-family: var(--font-primary);
+            font-size: 0.9rem;
+        }
+        
+        .nav-link:hover, .nav-link.active {
+            color: var(--white) !important;
+            background-color: rgba(255, 255, 255, 0.15);
+            transform: translateY(-2px);
+        }
+        
+        .nav-link i {
+            margin-right: 5px;
+        }
+        
+        /* Hero Section */
+        .hero {
+            background: linear-gradient(135deg, var(--primary-color) 0%, var(--secondary-color) 100%);
+            color: var(--white);
+            padding: 100px 0 80px;
+            position: relative;
+            overflow: hidden;
+        }
+        
+        .hero::before {
+            content: '';
+            position: absolute;
+            top: 0;
+            right: 0;
+            bottom: 0;
+            left: 0;
+            background: url('data:image/svg+xml;utf8,<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 100 100" preserveAspectRatio="none"><path fill="rgba(255,255,255,0.05)" d="M0,0 L100,0 L100,100 Q50,80 0,100 Z"></path></svg>');
+            background-size: 100% 100%;
+            background-repeat: no-repeat;
+            background-position: bottom;
+            z-index: 1;
+        }
+        
+        .hero .container {
+            position: relative;
+            z-index: 2;
+        }
+        
+        .hero h1 {
+            font-size: 2.5rem;
+            font-weight: 700;
+            margin-bottom: 20px;
+            line-height: 1.3;
+        }
+        
+        .hero h1 span {
+            color: var(--accent-color);
+            display: inline-block;
+        }
+        
+        .hero p {
+            font-size: 1.1rem;
+            margin-bottom: 30px;
+            max-width: 600px;
+            opacity: 0.9;
+        }
+        
+        .hero-buttons .btn {
+            margin-right: 15px;
+            margin-bottom: 15px;
+            padding: 12px 30px;
+            font-weight: 600;
+            border-radius: 50px;
+            transition: all 0.3s ease;
+            font-family: var(--font-primary);
+        }
+        
+        .hero-buttons .btn-primary {
+            background-color: var(--accent-color);
+            border-color: var(--accent-color);
+            color: var(--dark-color);
+        }
+        
+        .hero-buttons .btn-primary:hover {
+            transform: translateY(-3px);
+            box-shadow: 0 10px 20px rgba(0, 0, 0, 0.15);
+            background-color: #ffca28;
+        }
+        
+        .hero-buttons .btn-outline-light {
+            border: 2px solid var(--white);
+            color: var(--white);
+        }
+        
+        .hero-buttons .btn-outline-light:hover {
+            background-color: rgba(255, 255, 255, 0.1);
+            transform: translateY(-3px);
+            box-shadow: 0 10px 20px rgba(0, 0, 0, 0.1);
+        }
+        
+        /* Section Styles */
+        section {
+            padding: 80px 0;
+            position: relative;
+        }
+        
+        .section-title {
+            margin-bottom: 50px;
+            position: relative;
+            text-align: center;
+        }
+        
+        .section-title h2 {
+            font-weight: 700;
+            color: var(--primary-color);
+            position: relative;
+            display: inline-block;
+            padding-bottom: 15px;
+        }
+        
+        .section-title h2::after {
+            content: '';
+            position: absolute;
+            width: 70px;
+            height: 4px;
+            background-color: var(--accent-color);
+            bottom: 0;
+            left: 50%;
+            transform: translateX(-50%);
+            border-radius: 3px;
+        }
+        
+        .section-title p {
+            color: var(--text-color);
+            max-width: 700px;
+            margin: 15px auto 0;
+            font-size: 1.1rem;
+        }
+        
+        /* About Section */
+        .about-section {
+            background-color: var(--white);
+        }
+        
+        .about-image {
+            border-radius: 15px;
+            box-shadow: 0 20px 40px rgba(0, 0, 0, 0.1);
+            transition: all 0.5s ease;
+            border: 5px solid var(--white);
+        }
+        
+        .about-image:hover {
+            transform: scale(1.02);
+            box-shadow: 0 25px 50px rgba(0, 0, 0, 0.15);
+        }
+        
+        .features {
+            display: flex;
+            flex-wrap: wrap;
+            margin-top: 30px;
+            gap: 20px;
+        }
+        
+        .feature-item {
+            flex: 1 1 200px;
+            padding: 30px 20px;
+            background-color: var(--light-color);
+            border-radius: 12px;
+            text-align: center;
+            transition: all 0.3s ease;
+            border: 1px solid rgba(0, 0, 0, 0.05);
+            box-shadow: 0 5px 15px rgba(0, 0, 0, 0.05);
+        }
+        
+        .feature-item:hover {
+            transform: translateY(-10px);
+            box-shadow: 0 15px 30px rgba(0, 0, 0, 0.1);
+            border-color: var(--secondary-color);
+        }
+        
+        .feature-item i {
+            font-size: 2.5rem;
+            color: var(--primary-color);
+            margin-bottom: 20px;
+            transition: all 0.3s ease;
+        }
+        
+        .feature-item:hover i {
+            transform: scale(1.2);
+            color: var(--secondary-color);
+        }
+        
+        .feature-item h3 {
+            color: var(--primary-color);
+            font-size: 1.3rem;
+            margin-bottom: 15px;
+        }
+        
+        .feature-item p {
+            font-size: 0.95rem;
+            color: var(--text-color);
+            margin-bottom: 0;
+        }
+        
+        /* Educational Content Section */
+        .educational-content {
+            background-color: var(--white);
+        }
+        
+        .educational-tabs .nav-tabs {
+            border-bottom: 3px solid var(--secondary-color);
+            margin-bottom: 30px;
+            flex-wrap: nowrap;
+            overflow-x: auto;
+            overflow-y: hidden;
+            white-space: nowrap;
+            -webkit-overflow-scrolling: touch;
+            scrollbar-width: none;
+            justify-content: center;
+        }
+        
+        .educational-tabs .nav-tabs::-webkit-scrollbar {
+            display: none;
+        }
+        
+        .educational-tabs .nav-link {
+            color: var(--dark-color) !important;
+            background-color: transparent;
+            border: none;
+            font-weight: 600;
+            padding: 15px 25px !important;
+            position: relative;
+            white-space: nowrap;
+            border-radius: 0;
+            font-size: 1rem;
+            margin: 0 5px;
+        }
+        
+        .educational-tabs .nav-link.active {
+            color: var(--primary-color) !important;
+            background-color: transparent;
+        }
+        
+        .educational-tabs .nav-link.active::after {
+            content: '';
+            position: absolute;
+            bottom: -3px;
+            left: 0;
+            width: 100%;
+            height: 4px;
+            background-color: var(--accent-color);
+            border-radius: 2px 2px 0 0;
+        }
+        
+        .educational-tabs .nav-link i {
+            margin-right: 8px;
+            color: var(--primary-color);
+        }
+        
+        .tab-content {
+            padding: 40px;
+            background-color: var(--white);
+            border-radius: 15px;
+            box-shadow: 0 10px 30px rgba(0, 0, 0, 0.08);
+            border: none;
+        }
+        
+        .step-list, .check-list {
+            padding-left: 30px;
+            counter-reset: step;
+        }
+        
+        .step-list li, .check-list li {
+            margin-bottom: 15px;
+            position: relative;
+            padding-left: 15px;
+            font-size: 1.05rem;
+        }
+        
+        .step-list li::before {
+            content: counter(step);
+            counter-increment: step;
+            position: absolute;
+            left: -30px;
+            top: 0;
+            width: 24px;
+            height: 24px;
+            background-color: var(--secondary-color);
+            color: var(--white);
+            border-radius: 50%;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            font-size: 0.8rem;
+            font-weight: bold;
+        }
+        
+        .check-list li::before {
+            content: '\f00c';
+            font-family: 'Font Awesome 6 Free';
+            font-weight: 900;
+            position: absolute;
+            left: -25px;
+            color: var(--secondary-color);
+            top: 2px;
+        }
+        
+        .tab-image {
+            border-radius: 12px;
+            overflow: hidden;
+            box-shadow: 0 15px 35px rgba(0, 0, 0, 0.1);
+            transition: all 0.5s ease;
+            border: 5px solid var(--white);
+        }
+        
+        .tab-image:hover {
+            transform: translateY(-10px);
+            box-shadow: 0 20px 40px rgba(0, 0, 0, 0.15);
+        }
+        
+        .tab-image img {
+            width: 100%;
+            height: auto;
+            transition: transform 0.5s ease;
+        }
+        
+        .tab-image:hover img {
+            transform: scale(1.05);
+        }
+        
+        .table {
+            border-radius: 10px;
+            overflow: hidden;
+            box-shadow: 0 5px 15px rgba(0, 0, 0, 0.05);
+        }
+        
+        .table thead th {
+            background-color: var(--primary-color);
+            color: var(--white);
+            border: none;
+            font-weight: 500;
+            padding: 15px;
+        }
+        
+        .table tbody tr:nth-child(even) {
+            background-color: rgba(92, 184, 92, 0.1);
+        }
+        
+        .table tbody td {
+            padding: 12px 15px;
+            vertical-align: middle;
+        }
+        
+        .alert {
+            border-radius: 10px;
+            border: none;
+            box-shadow: 0 5px 15px rgba(0, 0, 0, 0.05);
+            padding: 20px;
+        }
+        
+        .alert-info {
+            background-color: rgba(44, 125, 63, 0.1);
+            border-left: 4px solid var(--primary-color);
+            color: var(--text-color);
+        }
+        
+        .alert-warning {
+            background-color: rgba(255, 193, 7, 0.1);
+            border-left: 4px solid var(--accent-color);
+            color: var(--text-color);
+        }
+        
+        /* Emergency Section */
+        .emergency-section {
+            background-color: var(--light-color);
+        }
+        
+        .emergency-card {
+            text-align: center;
+            padding: 30px 20px;
+            background-color: var(--white);
+            border-radius: 12px;
+            transition: all 0.3s ease;
+            height: 100%;
+            border: 1px solid rgba(0, 0, 0, 0.05);
+            box-shadow: 0 5px 15px rgba(0, 0, 0, 0.05);
+        }
+        
+        .emergency-card:hover {
+            transform: translateY(-10px);
+            box-shadow: 0 15px 30px rgba(0, 0, 0, 0.1);
+            border-color: var(--secondary-color);
+        }
+        
+        .emergency-icon {
+            width: 80px;
+            height: 80px;
+            margin: 0 auto 20px;
+            background-color: var(--primary-color);
+            color: var(--white);
+            border-radius: 50%;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            font-size: 2rem;
+            transition: all 0.3s ease;
+            box-shadow: 0 5px 15px rgba(0, 0, 0, 0.1);
+        }
+        
+        .emergency-card:hover .emergency-icon {
+            transform: rotate(15deg) scale(1.1);
+            background-color: var(--accent-color);
+            color: var(--dark-color);
+        }
+        
+        .emergency-number {
+            font-size: 2rem;
+            font-weight: 700;
+            color: var(--primary-color);
+            margin: 15px 0;
+            transition: all 0.3s ease;
+        }
+        
+        .emergency-card:hover .emergency-number {
+            color: var(--accent-color);
+            transform: scale(1.1);
+        }
+        
+        /* FAQ Section */
+        .faq-section {
+            background-color: var(--white);
+            padding: 100px 0;
+        }
+        
+        .accordion-item {
+            margin-bottom: 15px;
+            border-radius: 10px !important;
+            overflow: hidden;
+            border: 1px solid rgba(0, 0, 0, 0.05);
+            box-shadow: 0 5px 15px rgba(0, 0, 0, 0.05);
+        }
+        
+        .accordion-button {
+            font-weight: 600;
+            color: var(--primary-color);
+            background-color: var(--light-color);
+        }
+        
+        .accordion-button:not(.collapsed) {
+            color: var(--white);
+            background-color: var(--primary-color);
+        }
+        
+        .accordion-button:focus {
+            box-shadow: none;
+            border-color: var(--secondary-color);
+        }
+
+        /* Quiz Section */
+        .quiz-section {
+            background-color: var(--light-color);
+            padding: 80px 0;
+        }
+        
+        .quiz-container {
+            background-color: var(--white);
+            border-radius: 15px;
+            padding: 30px;
+            box-shadow: 0 10px 30px rgba(0, 0, 0, 0.08);
+        }
+        
+        .quiz-question {
+            font-size: 1.2rem;
+            font-weight: 600;
+            margin-bottom: 20px;
+            color: var(--primary-color);
+        }
+        
+        .quiz-options {
+            margin-bottom: 20px;
+        }
+        
+        .quiz-option {
+            padding: 15px;
+            margin-bottom: 10px;
+            background-color: var(--light-color);
+            border-radius: 8px;
+            cursor: pointer;
+            transition: all 0.3s ease;
+            border: 2px solid transparent;
+        }
+        
+        .quiz-option:hover {
+            background-color: rgba(44, 125, 63, 0.1);
+            border-color: var(--primary-color);
+        }
+        
+        .quiz-option.selected {
+            background-color: var(--primary-color);
+            color: var(--white);
+        }
+        
+        .quiz-option.correct {
+            background-color: var(--secondary-color);
+            color: var(--white);
+        }
+        
+        .quiz-option.incorrect {
+            background-color: #dc3545;
+            color: var(--white);
+        }
+        
+        .quiz-feedback {
+            padding: 15px;
+            border-radius: 8px;
+            margin-bottom: 20px;
+            display: none;
+        }
+        
+        .quiz-feedback.show {
+            display: block;
+        }
+        
+        .quiz-feedback.correct {
+            background-color: rgba(92, 184, 92, 0.1);
+            border-left: 4px solid var(--secondary-color);
+        }
+        
+        .quiz-feedback.incorrect {
+            background-color: rgba(220, 53, 69, 0.1);
+            border-left: 4px solid #dc3545;
+        }
+        
+        #quiz-results {
+            text-align: center;
+            padding: 30px;
+        }
+        
+        #quiz-score {
+            font-size: 1.5rem;
+            color: var(--primary-color);
+            margin-bottom: 20px;
+        }
+        
+        /* Lifestyle Section */
+        .lifestyle-section {
+            background-color: var(--white);
+        }
+        
+        .lifestyle-card {
+            border-radius: 12px;
+            overflow: hidden;
+            box-shadow: 0 10px 30px rgba(0, 0, 0, 0.08);
+            margin-bottom: 30px;
+            transition: all 0.3s ease;
+            height: 100%;
+        }
+        
+        .lifestyle-card:hover {
+            transform: translateY(-10px);
+            box-shadow: 0 15px 40px rgba(0, 0, 0, 0.15);
+        }
+        
+        .lifestyle-card-img {
+            height: 200px;
+            overflow: hidden;
+        }
+        
+        .lifestyle-card-img img {
+            width: 100%;
+            height: 100%;
+            object-fit: cover;
+            transition: transform 0.5s ease;
+        }
+        
+        .lifestyle-card:hover .lifestyle-card-img img {
+            transform: scale(1.1);
+        }
+        
+        .lifestyle-card-body {
+            padding: 25px;
+            background-color: var(--white);
+        }
+        
+        .lifestyle-card-title {
+            color: var(--primary-color);
+            font-weight: 600;
+            margin-bottom: 15px;
+        }
+        
+        /* Video Section */
+        .video-section {
+            background-color: var(--light-color);
+        }
+        
+        .video-container {
+            position: relative;
+            padding-bottom: 56.25%; /* 16:9 */
+            height: 0;
+            overflow: hidden;
+            border-radius: 12px;
+            box-shadow: 0 10px 30px rgba(0, 0, 0, 0.1);
+        }
+        
+        .video-container iframe {
+            position: absolute;
+            top: 0;
+            left: 0;
+            width: 100%;
+            height: 100%;
+            border: none;
+        }
+        
+        .video-card {
+            margin-bottom: 30px;
+        }
+        
+        .video-title {
+            margin-top: 15px;
+            font-weight: 600;
+            color: var(--primary-color);
+        }
+        
+        /* Responsive Adjustments */
+        @media (max-width: 1199.98px) {
+            .hero h1 {
+                font-size: 2.2rem;
+            }
+            
+            section {
+                padding: 70px 0;
+            }
+        }
+        
+        @media (max-width: 991.98px) {
+            .hero {
+                padding: 80px 0 60px;
+            }
+            
+            .hero h1 {
+                font-size: 2rem;
+            }
+            
+            .hero p {
+                font-size: 1rem;
+            }
+            
+            .section-title h2 {
+                font-size: 1.8rem;
+            }
+            
+            .feature-item {
+                flex: 1 1 250px;
+            }
+        }
+        
+        @media (max-width: 767.98px) {
+            .hero {
+                padding: 70px 0 50px;
+                text-align: center;
+            }
+            
+            .hero h1 {
+                font-size: 1.8rem;
+            }
+            
+            .hero-buttons {
+                justify-content: center;
+            }
+            
+            .logo-text {
+                text-align: center;
+                margin: 15px 0;
+            }
+            
+            .about-image {
+                margin-bottom: 30px;
+            }
+            
+            .educational-tabs .nav-link {
+                padding: 12px 15px !important;
+                font-size: 0.9rem;
+            }
+            
+            .tab-content {
+                padding: 25px 15px;
+            }
+        }
+        
+        @media (max-width: 575.98px) {
+            .hero h1 {
+                font-size: 1.6rem;
+            }
+            
+            .section-title h2 {
+                font-size: 1.6rem;
+            }
+            
+            .emergency-card {
+                padding: 25px 15px;
+            }
+            
+            .emergency-number {
+                font-size: 1.8rem;
+            }
+            
+            .nav-link {
+                padding: 8px 10px !important;
+                font-size: 0.8rem;
+            }
+        }
+    </style>
+</head>
+<body>
+   <!-- Header -->
+<header>
+    <nav class="navbar navbar-expand-lg navbar-dark">
+        <div class="container">
+            <a class="navbar-brand" href="/">
+                <img src="https://th.bing.com/th/id/R.c355949bede3005b49a89ba4c59fc19b?rik=QaDsvwTCoOohCw&riu=http%3a%2f%2fwww.uel.br%2flaboratorios%2flagea%2fimages%2fheader%2fuel-ico.png&ehk=%2bQoUVtmwQCATBWs9fa%2bvAIfC4vSusEVwTHS50noORgw%3d&risl=&pid=ImgRaw&r=0" 
+                     alt="Logo UEL" 
+                     height="90" 
+                     class="me-3" 
+>
+                <div class="logo-text">
+                    <h1>Farmácia UEL</h1>
+                    <p>Saúde e Sociedade</p>
+                </div>
+                <a class="navbar-brand" href="/">
+                    <img src="https://a0.anyrgb.com/pngimg/242/1100/art-land-apothecary-mortar-and-pestle-staff-of-hermes-pharmacist-medical-prescription-pharmacy-pharmaceutical-drug-medicine-grass.png" 
+                         alt="Logo UEL" 
+                         height="90" 
+                         class="me-3" 
+                         style="border: 2px solid white; border-radius: 5px; padding: 3px;">
+                    <div class="logo-text">
+            </a>
+            
+            <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarMain">
+                <span class="navbar-toggler-icon"></span>
+            </button>
+            
+            <div class="collapse navbar-collapse" id="navbarMain">
+                <ul class="navbar-nav ms-auto">
+                    <li class="nav-item">
+                        <a class="nav-link active" href="./index.html">
+                            <i class="fas fa-home"></i> Início
+                        </a>
+                    </li>
+                    <li class="nav-item">
+                        <a class="nav-link" href="#educational-content">
+                            <i class="fas fa-book-medical"></i> Conteúdo
+                        </a>
+                    </li>
+                    <li class="nav-item">
+                        <a class="nav-link" href="#lifestyle">
+                            <i class="fas fa-heartbeat"></i> Estilo de Vida
+                        </a>
+                    </li>
+                    <li class="nav-item">
+                        <a class="nav-link" href="#videos">
+                            <i class="fas fa-video"></i> Vídeos
+                        </a>
+                    </li>
+                    <li class="nav-item">
+                        <a class="nav-link" href="#faq">
+                            <i class="fas fa-question-circle"></i> Dúvidas
+                        </a>
+                    </li>
+                    <li class="nav-item">
+                        <a class="nav-link" href="#quiz">
+                            <i class="fas fa-gamepad"></i> Quiz
+                        </a>
+                    </li>
+                    <li class="nav-item">
+                        <a class="nav-link" href="#contact">
+                            <i class="fas fa-envelope"></i> Contato
+                        </a>
+                    </li>
+                </ul>
+            </div>
+        </div>
+    </nav>
+</header>
+    
+    <!-- Main Content -->
+    <main>
+        
+       <!-- Hero Section -->
+<section class="hero">
+    <div class="container">
+        <div class="row justify-content-center"> <!-- Adicionei justify-content-center para centralizar a row -->
+            <div class="col-lg-8 text-center"> <!-- Removi mx-auto (não é necessário com justify-content-center) -->
+                <h1 data-aos="fade-up">
+                    Educar com <span>Ciência, Cuidado e Humanização</span>
+                </h1>
+                <p class="mx-auto" data-aos="fade-up" data-aos-delay="100" style="max-width: 600px;">
+                    Promovendo educação em saúde de forma prática, acessível e acolhedora para melhorar a qualidade de vida de pacientes com doenças crônicas.
+                </p>
+                <div class="hero-buttons d-flex justify-content-center flex-wrap gap-3" data-aos="fade-up" data-aos-delay="200">
+                    <a href="#educational-content" class="btn btn-primary">Comece a Aprender</a>
+                    <a href="#contact" class="btn btn-outline-light">Entre em Contato</a>
+                </div>
+            </div>
+        </div>
+    </div>
+</section>
+
+        <!-- About Section -->
+        <section class="about-section">
+            <div class="container">
+                <div class="row">
+                    <div class="col-lg-6 mb-4 mb-lg-0" data-aos="fade-right">
+                        <img src="https://images.unsplash.com/photo-1580894732444-8ecded7900cd" alt="Educação em Farmácia" class="img-fluid about-image">
+                    </div>
+                    <div class="col-lg-6" data-aos="fade-left">
+                        <div class="section-title text-start">
+                            <h2>Sobre o Projeto</h2>
+                        </div>
+                        <p>O projeto "Farmácia, Saúde e Sociedade" é uma iniciativa do curso de Farmácia da Universidade Estadual de Londrina (UEL) que visa aproximar o conhecimento científico da comunidade.</p>
+                        <p>Nossa missão é proporcionar educação em saúde de qualidade, através de conteúdos acessíveis e ferramentas interativas que auxiliam no manejo de doenças crônicas, uso correto de medicamentos e promoção da saúde.</p>
+                        <div class="features">
+                            <div class="feature-item" data-aos="zoom-in" data-aos-delay="100">
+                                <i class="fas fa-graduation-cap"></i>
+                                <h3>Educação</h3>
+                                <p>Conteúdo educativo desenvolvido por especialistas</p>
+                            </div>
+                            <div class="feature-item" data-aos="zoom-in" data-aos-delay="200">
+                                <i class="fas fa-heartbeat"></i>
+                                <h3>Saúde</h3>
+                                <p>Promoção da saúde e qualidade de vida</p>
+                            </div>
+                            <div class="feature-item" data-aos="zoom-in" data-aos-delay="300">
+                                <i class="fas fa-hands-helping"></i>
+                                <h3>Sociedade</h3>
+                                <p>Compromisso com o bem-estar social</p>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </section>
+
+        <!-- Educational Content Section -->
+        <section id="educational-content" class="educational-content">
+            <div class="container">
+                <div class="section-title text-center" data-aos="fade-up">
+                    <h2>Conteúdo Educacional</h2>
+                    <p>Aprenda a utilizar corretamente os dispositivos médicos e medicamentos essenciais para o controle de doenças crônicas.</p>
+                </div>
+                
+                <!-- Tabs -->
+                <div class="educational-tabs" data-aos="fade-up">
+                    <ul class="nav nav-tabs justify-content-center" id="educationalTabs" role="tablist">
+                        <li class="nav-item" role="presentation">
+                            <button class="nav-link active" id="insulin-tab" data-bs-toggle="tab" data-bs-target="#insulin-content" type="button" role="tab" aria-controls="insulin-content" aria-selected="true">
+                                <i class="fas fa-syringe"></i> Insulina
+                            </button>
+                        </li>
+                        <li class="nav-item" role="presentation">
+                            <button class="nav-link" id="glucometer-tab" data-bs-toggle="tab" data-bs-target="#glucometer-content" type="button" role="tab" aria-controls="glucometer-content" aria-selected="false">
+                                <i class="fas fa-tachometer-alt"></i> Glicosímetro
+                            </button>
+                        </li>
+                        <li class="nav-item" role="presentation">
+                            <button class="nav-link" id="pressure-tab" data-bs-toggle="tab" data-bs-target="#pressure-content" type="button" role="tab" aria-controls="pressure-content" aria-selected="false">
+                                <i class="fas fa-heart"></i> Pressão Arterial
+                            </button>
+                        </li>
+                        <li class="nav-item" role="presentation">
+                            <button class="nav-link" id="medication-tab" data-bs-toggle="tab" data-bs-target="#medication-content" type="button" role="tab" aria-controls="medication-content" aria-selected="false">
+                                <i class="fas fa-pills"></i> Medicamentos
+                            </button>
+                        </li>
+                    </ul>
+                    
+                    <div class="tab-content" id="educationalTabContent">
+                        <!-- Insulin Tab -->
+                        <div class="tab-pane fade show active" id="insulin-content" role="tabpanel" aria-labelledby="insulin-tab">
+                            <div class="row">
+                                <div class="col-md-6" data-aos="fade-right">
+                                    <h3>Como aplicar insulina corretamente</h3>
+                                    <div class="alert alert-info">
+                                        <i class="fas fa-info-circle me-2"></i> A insulina é um hormônio essencial para o controle da glicemia em pessoas com diabetes.
+                                    </div>
+                                    <ol class="step-list">
+                                        <li><strong>Higienize as mãos:</strong> Lave bem as mãos com água e sabão antes de manusear a insulina.</li>
+                                        <li><strong>Verifique a insulina:</strong> Confira o tipo, data de validade e aspecto (deve ser límpida, sem partículas).</li>
+                                        <li><strong>Prepare o dispositivo:</strong> Se usar caneta, coloque a agulha e faça teste de fluxo. Se usar seringa, aspire a dose correta.</li>
+                                        <li><strong>Escolha o local:</strong> Abdômen (mais rápido), coxas (ação mais lenta) ou braços. Rotacione os locais.</li>
+                                        <li><strong>Aplique:</strong> Com a pele pinçada, insira a agulha em ângulo de 90°, injete lentamente e conte até 10 antes de retirar.</li>
+                                        <li><strong>Descarte:</strong> Jogue agulhas e seringas em coletor apropriado, nunca no lixo comum.</li>
+                                    </ol>
+                                    
+                                    <h4 class="mt-4">Cuidados no armazenamento</h4>
+                                    <ul class="check-list">
+                                        <li>Insulina em uso pode ficar em temperatura ambiente (até 28°C) por 28 dias</li>
+                                        <li>Reservas devem ser refrigeradas (2-8°C), nunca no congelador</li>
+                                        <li>Evite exposição ao calor extremo ou luz solar direta</li>
+                                    </ul>
+                                </div>
+                                <div class="col-md-6" data-aos="fade-left">
+                                    <div class="tab-image mb-4">
+                                        <img src="https://qtxasset.com/quartz/qcloud5/media/image/GettyImages-1250471519%20(2).jpg?VersionId=xivUjemhHqJHFIDJmW1IqDKTTO.1YQhQ" alt="Caneta de insulina" class="img-fluid">
+                                    </div>
+                                    
+                                    <h4>Tipos de Insulina</h4>
+                                    <div class="table-responsive">
+                                        <table class="table">
+                                            <thead>
+                                                <tr>
+                                                    <th>Tipo</th>
+                                                    <th>Início</th>
+                                                    <th>Pico</th>
+                                                    <th>Duração</th>
+                                                    <th>Exemplos</th>
+                                                </tr>
+                                            </thead>
+                                            <tbody>
+                                                <tr>
+                                                    <td>Rápida</td>
+                                                    <td>15 min</td>
+                                                    <td>1-2h</td>
+                                                    <td>4-6h</td>
+                                                    <td>Lispro, Aspart</td>
+                                                </tr>
+                                                <tr>
+                                                    <td>Regular</td>
+                                                    <td>30 min</td>
+                                                    <td>2-4h</td>
+                                                    <td>6-8h</td>
+                                                    <td>Humulina R</td>
+                                                </tr>
+                                                <tr>
+                                                    <td>Intermediária</td>
+                                                    <td>2-4h</td>
+                                                    <td>4-12h</td>
+                                                    <td>12-18h</td>
+                                                    <td>NPH</td>
+                                                </tr>
+                                                <tr>
+                                                    <td>Lenta</td>
+                                                    <td>1-2h</td>
+                                                    <td>Sem pico</td>
+                                                    <td>24h</td>
+                                                    <td>Glargina, Detemir</td>
+                                                </tr>
+                                            </tbody>
+                                        </table>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+
+                        <!-- Glucometer Tab -->
+                        <div class="tab-pane fade" id="glucometer-content" role="tabpanel" aria-labelledby="glucometer-tab">
+                            <div class="row">
+                                <div class="col-md-6" data-aos="fade-right">
+                                    <h3>Como usar o glicosímetro corretamente</h3>
+                                    <div class="alert alert-info">
+                                        <i class="fas fa-info-circle me-2"></i> O monitoramento regular da glicemia é essencial para o controle do diabetes.
+                                    </div>
+                                    <ol class="step-list">
+                                        <li><strong>Prepare o dispositivo:</strong> Insira a tira reagente no glicosímetro e verifique se o código corresponde.</li>
+                                        <li><strong>Lave as mãos:</strong> Com água morna e sabão, seque bem (álcool pode alterar o resultado).</li>
+                                        <li><strong>Escolha o local:</strong> Use os lados das pontas dos dedos, alternando os locais.</li>
+                                        <li><strong>Furo indolor:</strong> Use lanceta nova e ajuste a profundidade para sua pele.</li>
+                                        <li><strong>Coleta:</strong> Massageie suavemente até formar gota, aplique na tira sem esfregar.</li>
+                                        <li><strong>Leitura:</strong> Aguarde o resultado (geralmente 5-15 segundos).</li>
+                                        <li><strong>Registro:</strong> Anote o valor com data e hora para acompanhamento.</li>
+                                    </ol>
+                                    
+                                    <h4 class="mt-4">Valores de referência</h4>
+                                    <ul class="check-list">
+                                        <li><strong>Jejum:</strong> 70-99 mg/dL (normal), 100-125 mg/dL (pré-diabetes), ≥126 mg/dL (diabetes)</li>
+                                        <li><strong>Pós-prandial (2h após comer):</strong> &lt;140 mg/dL (normal), 140-199 mg/dL (pré-diabetes), ≥200 mg/dL (diabetes)</li>
+                                    </ul>
+                                </div>
+                                <div class="col-md-6" data-aos="fade-left">
+                                    <div class="tab-image mb-4">
+                                        <img src="https://static.hd.co.th/system/blog_articles/main_hero_images/000/004/932/original/iStock-187031673_(1).jpg" alt="Pessoa usando glicosímetro" class="img-fluid">
+                                    </div>
+                                    
+                                    <h4>Dicas para medição precisa</h4>
+                                    <div class="alert alert-warning">
+                                        <i class="fas fa-exclamation-triangle me-2"></i> Fatores que podem alterar os resultados:
+                                    </div>
+                                    <ul class="check-list">
+                                        <li>Tiras reagentes vencidas ou mal armazenadas</li>
+                                        <li>Mãos sujas ou com resíduos de alimentos</li>
+                                        <li>Desidratação ou hematócrito muito alto/baixo</li>
+                                        <li>Temperaturas extremas (armazene entre 4-30°C)</li>
+                                    </ul>
+                                    
+                                    <h4 class="mt-4">Quando medir?</h4>
+                                    <div class="table-responsive">
+                                        <table class="table">
+                                            <thead>
+                                                <tr>
+                                                    <th>Situação</th>
+                                                    <th>Frequência</th>
+                                                </tr>
+                                            </thead>
+                                            <tbody>
+                                                <tr>
+                                                    <td>Diabetes tipo 1</td>
+                                                    <td>4-10x/dia (antes refeições, exercícios, ao dormir)</td>
+                                                </tr>
+                                                <tr>
+                                                    <td>Diabetes tipo 2 com insulina</td>
+                                                    <td>2-4x/dia</td>
+                                                </tr>
+                                                <tr>
+                                                    <td>Diabetes tipo 2 sem insulina</td>
+                                                    <td>1-2x/dia (variação horários)</td>
+                                                </tr>
+                                                <tr>
+                                                    <td>Suspeita de hipo/hiperglicemia</td>
+                                                    <td>Imediatamente + acompanhamento</td>
+                                                </tr>
+                                            </tbody>
+                                        </table>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+
+                        <!-- Blood Pressure Tab -->
+                        <div class="tab-pane fade" id="pressure-content" role="tabpanel" aria-labelledby="pressure-tab">
+                            <div class="row">
+                                <div class="col-md-6" data-aos="fade-right">
+                                    <h3>Como medir a pressão arterial corretamente</h3>
+                                    <div class="alert alert-info">
+                                        <i class="fas fa-info-circle me-2"></i> A hipertensão arterial é um dos principais fatores de risco para doenças cardiovasculares.
+                                    </div>
+                                    <ol class="step-list">
+                                        <li><strong>Preparação:</strong> Descanse 5 minutos antes, evite café, álcool e fumo 30 minutos antes.</li>
+                                        <li><strong>Posição:</strong> Sente-se com costas apoiadas, pés no chão e braço na altura do coração.</li>
+                                        <li><strong>Manguito:</strong> Coloque 2-3 cm acima da dobra do cotovelo, ajustado ao braço (nem muito apertado nem folgado).</li>
+                                        <li><strong>Medição:</strong> Inicie o aparelho, permaneça imóvel e em silêncio durante a medição.</li>
+                                        <li><strong>Repetição:</strong> Espere 1-2 minutos e repita a medição para confirmar.</li>
+                                        <li><strong>Registro:</strong> Anote os valores com data, hora e qual braço foi medido.</li>
+                                    </ol>
+                                    
+                                    <h4 class="mt-4">Classificação da pressão arterial</h4>
+                                    <div class="table-responsive">
+                                        <table class="table">
+                                            <thead>
+                                                <tr>
+                                                    <th>Classificação</th>
+                                                    <th>Sistólica (mmHg)</th>
+                                                    <th>Diastólica (mmHg)</th>
+                                                </tr>
+                                            </thead>
+                                            <tbody>
+                                                <tr class="table-success">
+                                                    <td>Normal</td>
+                                                    <td>&lt; 120</td>
+                                                    <td>&lt; 80</td>
+                                                </tr>
+                                                <tr class="table-warning">
+                                                    <td>Pré-hipertensão</td>
+                                                    <td>120-139</td>
+                                                    <td>80-89</td>
+                                                </tr>
+                                                <tr class="table-danger">
+                                                    <td>Hipertensão Estágio 1</td>
+                                                    <td>140-159</td>
+                                                    <td>90-99</td>
+                                                </tr>
+                                                <tr class="table-danger">
+                                                    <td>Hipertensão Estágio 2</td>
+                                                    <td>≥ 160</td>
+                                                    <td>≥ 100</td>
+                                                </tr>
+                                            </tbody>
+                                        </table>
+                                    </div>
+                                </div>
+                                <div class="col-md-6" data-aos="fade-left">
+                                    <div class="tab-image mb-4">
+                                        <img src="https://escolaeducacao.com.br/wp-content/uploads/2020/10/pressao-arterial-1024x684.jpg" alt="Medição de pressão arterial" class="img-fluid">
+                                    </div>
+                                    
+                                    <h4>Erros comuns a evitar</h4>
+                                    <ul class="check-list">
+                                        <li>Manguito de tamanho inadequado (muito grande ou pequeno)</li>
+                                        <li>Braço pendurado durante a medição</li>
+                                        <li>Conversar ou se mover durante o procedimento</li>
+                                        <li>Medir sobre roupas grossas</li>
+                                        <li>Bexiga cheia durante a medição</li>
+                                    </ul>
+                                    
+                                    <h4 class="mt-4">Monitoramento domiciliar</h4>
+                                    <div class="alert alert-warning">
+                                        <i class="fas fa-exclamation-triangle me-2"></i> Recomendações para medidas confiáveis:
+                                    </div>
+                                    <ul class="check-list">
+                                        <li>Medir sempre no mesmo braço (preferencialmente o esquerdo)</li>
+                                        <li>Horários consistentes (manhã e noite)</li>
+                                        <li>Fazer 2-3 medidas com intervalo de 1-2 minutos</li>
+                                        <li>Registrar os valores em um caderno ou aplicativo</li>
+                                        <li>Levar os registros nas consultas médicas</li>
+                                    </ul>
+                                </div>
+                            </div>
+                        </div>
+
+                        <!-- Medication Tab -->
+                        <div class="tab-pane fade" id="medication-content" role="tabpanel" aria-labelledby="medication-tab">
+                            <div class="row">
+                                <div class="col-md-6" data-aos="fade-right">
+                                    <h3>Uso correto de medicamentos</h3>
+                                    <div class="alert alert-info">
+                                        <i class="fas fa-info-circle me-2"></i> O uso inadequado de medicamentos é responsável por muitas internações hospitalares.
+                                    </div>
+                                    <ul class="check-list">
+                                        <li>Tome o medicamento exatamente como prescrito.</li>
+                                        <li>Respeite os horários indicados.</li>
+                                        <li>Nunca interrompa o tratamento sem orientação médica.</li>
+                                        <li>Verifique a validade dos medicamentos.</li>
+                                        <li>Armazene em local adequado (seco, protegido da luz e calor).</li>
+                                        <li>Mantenha fora do alcance de crianças.</li>
+                                        <li>Não utilize medicamentos de outras pessoas.</li>
+                                        <li>Em caso de dúvidas, consulte um farmacêutico.</li>
+                                    </ul>
+                                    
+                                    <h4 class="mt-4">Principais classes de medicamentos para doenças crônicas</h4>
+                                    <div class="table-responsive">
+                                        <table class="table">
+                                            <thead>
+                                                <tr>
+                                                    <th>Classe</th>
+                                                    <th>Exemplos</th>
+                                                    <th>Cuidados</th>
+                                                </tr>
+                                            </thead>
+                                            <tbody>
+                                                <tr>
+                                                    <td>Anti-hipertensivos</td>
+                                                    <td>Losartana, Amlodipina</td>
+                                                    <td>Não interromper abruptamente</td>
+                                                </tr>
+                                                <tr>
+                                                    <td>Antidiabéticos</td>
+                                                    <td>Metformina, Glibenclamida</td>
+                                                    <td>Monitorar glicemia</td>
+                                                </tr>
+                                                <tr>
+                                                    <td>Anticoagulantes</td>
+                                                    <td>Varfarina, Rivaroxabana</td>
+                                                    <td>Cuidado com sangramentos</td>
+                                                </tr>
+                                                <tr>
+                                                    <td>Anti-inflamatórios</td>
+                                                    <td>Ibuprofeno, Diclofenaco</td>
+                                                    <td>Evitar uso prolongado</td>
+                                                </tr>
+                                            </tbody>
+                                        </table>
+                                    </div>
+                                </div>
+                                <div class="col-md-6" data-aos="fade-left">
+                                    <div class="tab-image mb-4">
+                                        <img src="https://images.unsplash.com/photo-1587854692152-cbe660dbde88" alt="Organização de medicamentos" class="img-fluid">
+                                    </div>
+                                    
+                                    <h4>Dicas para não esquecer de tomar os remédios</h4>
+                                    <ul class="check-list">
+                                        <li>Use organizadores semanais de comprimidos</li>
+                                        <li>Estabeleça rotinas (ex: junto com café da manhã)</li>
+                                        <li>Utilize alarmes no celular</li>
+                                        <li>Tenha um registro diário para marcar as doses</li>
+                                        <li>Mantenha os medicamentos em local visível</li>
+                                    </ul>
+                                    
+                                    <h4 class="mt-4">Interações medicamentosas comuns</h4>
+                                    <div class="alert alert-warning">
+                                        <i class="fas fa-exclamation-triangle me-2"></i> Combinações que devem ser evitadas:
+                                    </div>
+                                    <ul class="check-list">
+                                        <li><strong>Antiácidos:</strong> Podem reduzir absorção de outros medicamentos</li>
+                                        <li><strong>Álcool:</strong> Potencializa efeitos sedativos e hepatotoxicidade</li>
+                                        <li><strong>Anticoagulantes + AAS:</strong> Aumentam risco de sangramento</li>
+                                        <li><strong>Diuréticos + Anti-inflamatórios:</strong> Reduzem efeito diurético</li>
+                                    </ul>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </section>
+
+        <!-- Lifestyle Section -->
+        <section id="lifestyle" class="lifestyle-section">
+            <div class="container">
+                <div class="section-title text-center" data-aos="fade-up">
+                    <h2>Estilo de Vida Saudável</h2>
+                    <p>Saiba como a alimentação, exercícios e saúde mental impactam no controle de doenças crônicas</p>
+                </div>
+                
+                <div class="row">
+                    <div class="col-md-4" data-aos="fade-up" data-aos-delay="100">
+                        <div class="lifestyle-card">
+                            <div class="lifestyle-card-img">
+                                <img src="https://images.unsplash.com/photo-1490645935967-10de6ba17061" alt="Alimentação saudável">
+                            </div>
+                            <div class="lifestyle-card-body">
+                                <h3 class="lifestyle-card-title">Alimentação Saudável</h3>
+                                <p>Uma dieta balanceada é fundamental para o controle de doenças crônicas como diabetes e hipertensão. Priorize:</p>
+                                <ul class="check-list">
+                                    <li>Alimentos integrais e ricos em fibras</li>
+                                    <li>Frutas e vegetais variados</li>
+                                    <li>Proteínas magras (peixes, frango, leguminosas)</li>
+                                    <li>Gorduras saudáveis (azeite, castanhas, abacate)</li>
+                                </ul>
+                                <p class="mt-3"><strong>Evite:</strong> alimentos ultraprocessados, excesso de sal, açúcar refinado e gorduras saturadas.</p>
+                                <div class="alert alert-info mt-3">
+                                    <i class="fas fa-info-circle me-2"></i> Consulte um nutricionista para um plano alimentar personalizado.
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                    
+                    <div class="col-md-4" data-aos="fade-up" data-aos-delay="200">
+                        <div class="lifestyle-card">
+                            <div class="lifestyle-card-img">
+                                <img src="https://images.unsplash.com/photo-1571019613454-1cb2f99b2d8b" alt="Exercícios físicos">
+                            </div>
+                            <div class="lifestyle-card-body">
+                                <h3 class="lifestyle-card-title">Atividade Física</h3>
+                                <p>A prática regular de exercícios ajuda no controle glicêmico, pressão arterial e saúde cardiovascular. Recomendações:</p>
+                                <ul class="check-list">
+                                    <li>150 minutos de atividade moderada por semana</li>
+                                    <li>Exercícios aeróbicos (caminhada, natação, ciclismo)</li>
+                                    <li>Treino de força 2-3x/semana</li>
+                                    <li>Alongamentos diários</li>
+                                </ul>
+                                <p class="mt-3"><strong>Benefícios:</strong> melhora da sensibilidade à insulina, redução da pressão arterial, controle de peso e melhora do humor.</p>
+                                <div class="alert alert-warning mt-3">
+                                    <i class="fas fa-exclamation-triangle me-2"></i> Consulte um médico antes de iniciar qualquer atividade física intensa.
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                    
+                    <div class="col-md-4" data-aos="fade-up" data-aos-delay="300">
+                        <div class="lifestyle-card">
+                            <div class="lifestyle-card-img">
+                                <img src="https://images.unsplash.com/photo-1573497019940-1c28c88b4f3e" alt="Apoio psicológico">
+                            </div>
+                            <div class="lifestyle-card-body">
+                                <h3 class="lifestyle-card-title">Saúde Mental</h3>
+                                <p>O bem-estar emocional é essencial para o manejo de doenças crônicas. Cuidados importantes:</p>
+                                <ul class="check-list">
+                                    <li>Pratique técnicas de relaxamento (meditação, respiração)</li>
+                                    <li>Mantenha uma rede de apoio social</li>
+                                    <li>Estabeleça rotinas de sono saudáveis</li>
+                                    <li>Reconheça sinais de estresse e ansiedade</li>
+                                </ul>
+                                <p class="mt-3"><strong>Apoio profissional:</strong> psicólogos podem ajudar a desenvolver estratégias de enfrentamento e adesão ao tratamento.</p>
+                                <div class="alert alert-info mt-3">
+                                    <i class="fas fa-info-circle me-2"></i> O CVV (188) oferece apoio emocional gratuito 24h.
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+                
+                <div class="row mt-5">
+                    <div class="col-lg-10 mx-auto">
+                        <div class="alert alert-warning">
+                            <h4><i class="fas fa-lightbulb me-2"></i> Dicas para um estilo de vida saudável</h4>
+                            <div class="row">
+                                <div class="col-md-6">
+                                    <ul class="check-list">
+                                        <li>Mantenha-se hidratado (2L de água/dia)</li>
+                                        <li>Reduza o consumo de álcool e evite fumar</li>
+                                        <li>Controle o estresse com hobbies e lazer</li>
+                                    </ul>
+                                </div>
+                                <div class="col-md-6">
+                                    <ul class="check-list">
+                                        <li>Monitore regularmente seus parâmetros de saúde</li>
+                                        <li>Siga rigorosamente as orientações médicas</li>
+                                        <li>Participe de grupos de apoio se necessário</li>
+                                    </ul>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </section>
+
+        <!-- Video Section -->
+        <section id="videos" class="video-section">
+            <div class="container">
+                <div class="section-title text-center" data-aos="fade-up">
+                    <h2>Vídeos Educativos</h2>
+                    <p>Aprenda através de vídeos explicativos sobre o uso correto de medicamentos e dispositivos médicos</p>
+                </div>
+                
+                <div class="row">
+                    <div class="col-md-6" data-aos="fade-up" data-aos-delay="100">
+                        <div class="video-card">
+                            <div class="video-container">
+                                <iframe src="https://www.youtube.com/watch?v=xx-vSryoX6M" frameborder="0" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture" allowfullscreen></iframe>
+                            </div>
+                            <h4 class="video-title">Como Usar a Caneta de Insulina do SUS</h4>
+                            <p>Passo a passo completo para aplicação segura de insulina com caneta.</p>
+                        </div>
+                    </div>
+                    
+                    <div class="col-md-6" data-aos="fade-up" data-aos-delay="200">
+                        <div class="video-card">
+                            <div class="video-container">
+                                <iframe src="https://www.youtube.com/watch?v=TpdOsm72o_c" frameborder="0" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture" allowfullscreen></iframe>
+                            </div>
+                            <h4 class="video-title">Como Aferir a Pressão Arterial (Aparelho Digital)</h4>
+                            <p>Aprenda como aplicar com eficácia e segurança.</p>
+                        </div>
+                    </div>
+                    
+                    <div class="col-md-6" data-aos="fade-up" data-aos-delay="100">
+                        <div class="video-card">
+                            <div class="video-container">
+                                <iframe src="https://www.youtube.com/watch?v=ADanFhNGWJM" frameborder="0" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture" allowfullscreen></iframe>
+                            </div>
+                            <h4 class="video-title">Como Usar o Monitor de Glicemia Accu-Chek Active</h4>
+                            <p>Tutorial completo para usar o monitor de glicemia.</p>
+                        </div>
+                    </div>
+                    
+                    <div class="col-md-6" data-aos="fade-up" data-aos-delay="200">
+                        <div class="video-card">
+                            <div class="video-container">
+                                <iframe src="https://www.youtube.com/watch?v=CwZJW9lL0Vs" frameborder="0" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture" allowfullscreen></iframe>
+                            </div>
+                            <h4 class="video-title">Medição da pressão arterial em casa</h4>
+                            <p>Como Aferir a Pressão Arterial Usando Esfigmomanômetro e Estetoscópio.</p>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </section>
+
+        <!-- Emergency Contact Section -->
+        <section class="emergency-section">
+            <div class="container">
+                <div class="section-title text-center" data-aos="fade-up">
+                    <h2>Contatos de Emergência</h2>
+                    <p>Tenha sempre em mãos estes contatos importantes para situações de emergência</p>
+                </div>
+                
+                <div class="row">
+                    <div class="col-md-3 col-sm-6 mb-4" data-aos="zoom-in" data-aos-delay="100">
+                        <div class="emergency-card">
+                            <div class="emergency-icon">
+                                <i class="fas fa-ambulance"></i>
+                            </div>
+                            <h3>SAMU</h3>
+                            <p class="emergency-number">192</p>
+                            <p>Emergências médicas</p>
+                        </div>
+                    </div>
+                    
+                    <div class="col-md-3 col-sm-6 mb-4" data-aos="zoom-in" data-aos-delay="200">
+                        <div class="emergency-card">
+                            <div class="emergency-icon">
+                                <i class="fas fa-fire-extinguisher"></i>
+                            </div>
+                            <h3>Bombeiros</h3>
+                            <p class="emergency-number">193</p>
+                            <p>Incêndios e acidentes</p>
+                        </div>
+                    </div>
+                    
+                    <div class="col-md-3 col-sm-6 mb-4" data-aos="zoom-in" data-aos-delay="300">
+                        <div class="emergency-card">
+                            <div class="emergency-icon">
+                                <i class="fas fa-shield-alt"></i>
+                            </div>
+                            <h3>Polícia</h3>
+                            <p class="emergency-number">190</p>
+                            <p>Emergências policiais</p>
+                        </div>
+                    </div>
+                    
+                    <div class="col-md-3 col-sm-6 mb-4" data-aos="zoom-in" data-aos-delay="400">
+                        <div class="emergency-card">
+                            <div class="emergency-icon">
+                                <i class="fas fa-hospital"></i>
+                            </div>
+                            <h3>Hospital UEL</h3>
+                            <p class="emergency-number">(43) 3371-2000</p>
+                            <p>Atendimento hospitalar</p>
+                        </div>
+                    </div>
+                    
+                    <div class="col-md-3 col-sm-6 mb-4" data-aos="zoom-in" data-aos-delay="100">
+                        <div class="emergency-card">
+                            <div class="emergency-icon">
+                                <i class="fas fa-phone-alt"></i>
+                            </div>
+                            <h3>Disque SUS</h3>
+                            <p class="emergency-number">136</p>
+                            <p>Orientações sobre saúde</p>
+                        </div>
+                    </div>
+                    
+                    <div class="col-md-3 col-sm-6 mb-4" data-aos="zoom-in" data-aos-delay="200">
+                        <div class="emergency-card">
+                            <div class="emergency-icon">
+                                <i class="fas fa-shield-virus"></i>
+                            </div>
+                            <h3>Vigilância Sanitária</h3>
+                            <p class="emergency-number">(43) 3378-0111</p>
+                            <p>Denúncias e orientações</p>
+                        </div>
+                    </div>
+                    
+                    <div class="col-md-3 col-sm-6 mb-4" data-aos="zoom-in" data-aos-delay="300">
+                        <div class="emergency-card">
+                            <div class="emergency-icon">
+                                <i class="fas fa-headset"></i>
+                            </div>
+                            <h3>Ouvidoria SUS - PR</h3>
+                            <p class="emergency-number">0800 644 4414</p>
+                            <p>Reclamações e sugestões</p>
+                        </div>
+                    </div>
+                    
+                    <div class="col-md-3 col-sm-6 mb-4" data-aos="zoom-in" data-aos-delay="400">
+                        <div class="emergency-card">
+                            <div class="emergency-icon">
+                                <i class="fas fa-heart"></i>
+                            </div>
+                            <h3>CVV</h3>
+                            <p class="emergency-number">188</p>
+                            <p>Centro de Valorização da Vida</p>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </section>
+
+        <!-- FAQ Section -->
+        <section id="faq" class="faq-section">
+            <div class="container">
+                <div class="section-title text-center" data-aos="fade-up">
+                    <h2>Dúvidas Frequentes</h2>
+                    <p>Encontre respostas para as perguntas mais comuns sobre saúde e medicamentos</p>
+                </div>
+                
+                <div class="row">
+                    <div class="col-lg-8 mx-auto" data-aos="fade-up">
+                        <div class="accordion" id="faqAccordion">
+                            <div class="accordion-item">
+                                <h2 class="accordion-header" id="headingOne">
+                                    <button class="accordion-button" type="button" data-bs-toggle="collapse" data-bs-target="#collapseOne" aria-expanded="true" aria-controls="collapseOne">
+                                        Como armazenar medicamentos corretamente?
+                                    </button>
+                                </h2>
+                                <div id="collapseOne" class="accordion-collapse collapse show" aria-labelledby="headingOne" data-bs-parent="#faqAccordion">
+                                    <div class="accordion-body">
+                                        <p>Os medicamentos devem ser armazenados em local seco, fresco e protegido da luz solar direta. A maioria pode ser mantida em temperatura ambiente (entre 15°C e 30°C). Alguns medicamentos específicos, como certas insulinas, precisam de refrigeração (entre 2°C e 8°C). Sempre verifique a bula para orientações específicas.</p>
+                                        <p>Evite guardar medicamentos no banheiro ou na cozinha, pois a umidade e variações de temperatura podem danificá-los. Mantenha-os em suas embalagens originais e fora do alcance de crianças e animais.</p>
+                                    </div>
+                                </div>
+                            </div>
+                            
+                            <div class="accordion-item">
+                                <h2 class="accordion-header" id="headingTwo">
+                                    <button class="accordion-button collapsed" type="button" data-bs-toggle="collapse" data-bs-target="#collapseTwo" aria-expanded="false" aria-controls="collapseTwo">
+                                        O que fazer quando esquecer de tomar um medicamento?
+                                    </button>
+                                </h2>
+                                <div id="collapseTwo" class="accordion-collapse collapse" aria-labelledby="headingTwo" data-bs-parent="#faqAccordion">
+                                    <div class="accordion-body">
+                                        <p>Se você esquecer de tomar uma dose, tome assim que lembrar. No entanto, se estiver perto do horário da próxima dose, pule a dose esquecida e continue com o horário regular. Nunca tome duas doses para compensar a esquecida, a menos que orientado por um profissional de saúde.</p>
+                                        <p>Para medicamentos de uso contínuo, como anti-hipertensivos ou antidiabéticos, consulte seu médico ou farmacêutico para orientações específicas. Alguns medicamentos têm protocolos diferentes para doses esquecidas.</p>
+                                    </div>
+                                </div>
+                            </div>
+                            
+                            <div class="accordion-item">
+                                <h2 class="accordion-header" id="headingThree">
+                                    <button class="accordion-button collapsed" type="button" data-bs-toggle="collapse" data-bs-target="#collapseThree" aria-expanded="false" aria-controls="collapseThree">
+                                        Posso tomar medicamentos com álcool?
+                                    </button>
+                                </h2>
+                                <div id="collapseThree" class="accordion-collapse collapse" aria-labelledby="headingThree" data-bs-parent="#faqAccordion">
+                                    <div class="accordion-body">
+                                        <p>A combinação de álcool com medicamentos pode ser perigosa. O álcool pode potencializar ou anular os efeitos de muitos medicamentos, além de aumentar o risco de efeitos colaterais como sonolência, tonturas e problemas hepáticos.</p>
+                                        <p>Alguns medicamentos que NÃO devem ser combinados com álcool incluem: antibióticos, antidepressivos, anti-inflamatórios, antialérgicos, analgésicos e medicamentos para diabetes e pressão arterial. Sempre consulte seu farmacêutico ou médico sobre interações específicas.</p>
+                                    </div>
+                                </div>
+                            </div>
+                            
+                            <div class="accordion-item">
+                                <h2 class="accordion-header" id="headingFour">
+                                    <button class="accordion-button collapsed" type="button" data-bs-toggle="collapse" data-bs-target="#collapseFour" aria-expanded="false" aria-controls="collapseFour">
+                                        Como descartar medicamentos vencidos corretamente?
+                                    </button>
+                                </h2>
+                                <div id="collapseFour" class="accordion-collapse collapse" aria-labelledby="headingFour" data-bs-parent="#faqAccordion">
+                                    <div class="accordion-body">
+                                        <p>Medicamentos vencidos ou não utilizados nunca devem ser descartados no lixo comum ou no vaso sanitário, pois podem contaminar o meio ambiente. O descarte correto deve ser feito em pontos de coleta específicos.</p>
+                                        <p>Em Londrina, você pode descartar medicamentos vencidos nas farmácias que participam do programa de descarte consciente ou nas Unidades Básicas de Saúde (UBS). O Hospital Universitário da UEL também possui pontos de coleta. Medicamentos sólidos (comprimidos, cápsulas) devem ser mantidos em suas embalagens, enquanto líquidos devem ser levados em seus frascos originais.</p>
+                                    </div>
+                                </div>
+                            </div>
+                            
+                            <div class="accordion-item">
+                                <h2 class="accordion-header" id="headingFive">
+                                    <button class="accordion-button collapsed" type="button" data-bs-toggle="collapse" data-bs-target="#collapseFive" aria-expanded="false" aria-controls="collapseFive">
+                                        Quais os sinais de uma reação alérgica a medicamentos?
+                                    </button>
+                                </h2>
+                                <div id="collapseFive" class="accordion-collapse collapse" aria-labelledby="headingFive" data-bs-parent="#faqAccordion">
+                                    <div class="accordion-body">
+                                        <p>Os sinais de uma reação alérgica a medicamentos podem incluir:</p>
+                                        <ul>
+                                            <li>Erupções cutâneas, urticária ou coceira</li>
+                                            <li>Inchaço no rosto, lábios ou língua</li>
+                                            <li>Dificuldade para respirar ou chiado no peito</li>
+                                            <li>Tontura ou desmaio</li>
+                                            <li>Náuseas, vômitos ou diarreia</li>
+                                        </ul>
+                                        <p>Se apresentar qualquer um desses sintomas após tomar um medicamento, interrompa o uso e procure atendimento médico imediatamente. Reações alérgicas graves (anafilaxia) podem ser fatais se não tratadas rapidamente.</p>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </section>
+
+        <!-- Quiz Section -->
+        <section id="quiz" class="quiz-section">
+            <div class="container">
+                <div class="section-title text-center" data-aos="fade-up">
+                    <h2>Teste Seus Conhecimentos</h2>
+                    <p>Responda nosso quiz e descubra o quanto você sabe sobre saúde e medicamentos</p>
+                </div>
+                
+                <div class="row justify-content-center">
+                    <div class="col-lg-8" data-aos="fade-up">
+                        <div class="quiz-container">
+                            <div id="quiz-area">
+                                <div class="quiz-question" id="quiz-question">
+                                    Carregando perguntas...
+                                </div>
+                                
+                                <div class="quiz-options" id="quiz-options">
+                                    <!-- Opções serão geradas por JavaScript -->
+                                </div>
+                                
+                                <div class="quiz-feedback" id="quiz-feedback"></div>
+                                
+                                <div class="d-flex justify-content-between">
+                                    <button id="prev-question" class="btn btn-outline-primary" disabled>
+                                        <i class="fas fa-arrow-left"></i> Anterior
+                                    </button>
+                                    <button id="next-question" class="btn btn-primary">
+                                        Próxima <i class="fas fa-arrow-right"></i>
+                                    </button>
+                                </div>
+                                
+                                <div class="progress mt-4">
+                                    <div id="quiz-progress" class="progress-bar bg-success" role="progressbar" style="width: 0%"></div>
+                                </div>
+                                
+                                <div class="text-center mt-4">
+                                    <span id="quiz-counter">Pergunta 1 de 5</span>
+                                </div>
+                            </div>
+                            
+                            <div id="quiz-results" style="display: none;">
+                                <h3 class="text-center mb-4">Resultado do Quiz</h3>
+                                <div class="text-center">
+                                    <h4 id="quiz-score">Você acertou 0 de 5 perguntas</h4>
+                                    <p id="quiz-message" class="mb-4"></p>
+                                    <button id="restart-quiz" class="btn btn-primary">
+                                        <i class="fas fa-redo"></i> Fazer Novamente
+                                    </button>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </section>
+
+        <!-- Contact Section -->
+        <section id="contact" class="contact-section">
+            <div class="container">
+                <div class="section-title text-center" data-aos="fade-up">
+                    <h2>Entre em Contato</h2>
+                    <p>Tem dúvidas, sugestões ou quer agendar uma palestra? Envie sua mensagem</p>
+                </div>
+                
+                <div class="row">
+                    <div class="col-lg-6 mb-4 mb-lg-0" data-aos="fade-right">
+                        <div class="contact-form">
+                            <form id="contactForm">
+                                <div class="mb-3">
+                                    <label for="name" class="form-label">Nome Completo</label>
+                                    <input type="text" class="form-control" id="name" required>
+                                </div>
+                                <div class="mb-3">
+                                    <label for="email" class="form-label">Email</label>
+                                    <input type="email" class="form-control" id="email" required>
+                                </div>
+                                <div class="mb-3">
+                                    <label for="subject" class="form-label">Assunto</label>
+                                    <input type="text" class="form-control" id="subject" required>
+                                </div>
+                                <div class="mb-3">
+                                    <label for="message" class="form-label">Mensagem</label>
+                                    <textarea class="form-control" id="message" rows="5" required></textarea>
+                                </div>
+                                <button type="submit" class="btn btn-primary">Enviar Mensagem</button>
+                            </form>
+                        </div>
+                    </div>
+                    
+                    <div class="col-lg-6" data-aos="fade-left">
+                        <div class="contact-info">
+                            <h3 class="mb-4">Informações de Contato</h3>
+                            
+                            <div class="contact-info-item">
+                                <div class="contact-info-icon">
+                                    <i class="fas fa-map-marker-alt"></i>
+                                </div>
+                                <div>
+                                    <h5>Endereço</h5>
+                                    <p>Rodovia Celso Garcia Cid, PR 445, Km 380<br>Campus Universitário, Londrina - PR<br>CEP 86057-970</p>
+                                </div>
+                            </div>
+                            
+                            <div class="contact-info-item">
+                                <div class="contact-info-icon">
+                                    <i class="fas fa-phone-alt"></i>
+                                </div>
+                                <div>
+                                    <h5>Telefone</h5>
+                                    <p>(43) 3371-4000</p>
+                                </div>
+                            </div>
+                            
+                            <div class="contact-info-item">
+                                <div class="contact-info-icon">
+                                    <i class="fas fa-envelope"></i>
+                                </div>
+                                <div>
+                                    <h5>Email</h5>
+                                    <p>insulina.info@gmail.com</p>
+                                </div>
+                            </div>
+                            
+                            <div class="contact-info-item">
+                                <div class="contact-info-icon">
+                                    <i class="fas fa-clock"></i>
+                                </div>
+                                <div>
+                                    <h5>Horário de Atendimento</h5>
+                                    <p>Segunda a Sexta: 08h às 12h e 14h às 18h</p>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </section>
+
+        <!-- Call to Action -->
+        <section class="cta-section">
+            <div class="container">
+                <div class="row align-items-center" data-aos="fade-up">
+                    <div class="col-lg-8 mb-4 mb-lg-0">
+                        <h2>Quer saber mais sobre nosso projeto?</h2>
+                        <p>Entre em contato conosco para informações adicionais, agendamento de palestras ou parcerias educativas.</p>
+                    </div>
+                    <div class="col-lg-4 text-lg-end">
+                        <a href="#contact" class="btn btn-light btn-lg">Entre em Contato</a>
+                    </div>
+                </div>
+            </div>
+        </section>
+
+    </main>
+    
+    <!-- Footer -->
+    <footer>
+        <div class="container">
+            <div class="row">
+                <div class="col-md-4 mb-4 mb-md-0" data-aos="fade-up">
+                    <h3>Sobre o Curso</h3>
+                    <p>O curso de Farmácia da UEL forma profissionais capacitados para atuar em diferentes áreas da saúde, com ênfase na pesquisa, assistência farmacêutica e educação em saúde.</p>
+                </div>
+                <div class="col-md-4 mb-4 mb-md-0" data-aos="fade-up" data-aos-delay="100">
+                    <h3>Contato</h3>
+                    <p><i class="fas fa-map-marker-alt"></i> Campus Universitário UEL, Londrina - PR</p>
+                    <p><i class="fas fa-phone"></i> (43) 3371-4000</p>
+                    <p><i class="fas fa-envelope"></i> insulina.info@gmail.com</p>
+                    
+                    <div class="developer-info">
+                        <h4>Professor</h4>
+                        <p>Prof. Doutor Thiago Vinicius Nadaleto Didone</p>
+                        <p><i class="fas fa-envelope"></i> tdidone@uel.com.br</p>
+                    </div>
+                </div>
+                <div class="col-md-4" data-aos="fade-up" data-aos-delay="200">
+                    <div class="developer-info">
+                        <h4>Desenvolvido por:</h4>
+                        <p><i class="fas fa-envelope"></i> natalia.felipe@uel.com.br</p>
+                        <p><i class="fas fa-envelope"></i> mariaed.antiloto@uel.com.br</p>
+                        <p><i class="fas fa-envelope"></i> nathalia.souzaap@uel.com.br</p>
+                        <p><i class="fas fa-envelope"></i> isabely.alcantara@uel.com.br</p>
+                        <p><i class="fas fa-envelope"></i> giovanna.bborges@uel.com.br</p>
+                        <p>Site desenvolvido por: João Felipe Lima</p>
+                        <p><i class="fas fa-envelope"></i> joaofelipel2011@gmail.com</p>
+                    </div>
+                </div>
+            </div>
+            <div class="row mt-4">
+                <div class="col-12 text-center">
+                    <p class="copyright">© 2025 Universidade Estadual de Londrina - Curso de Farmácia. Todos os direitos reservados.</p>
+                </div>
+            </div>
+        </div>
+    </footer>
+    
+    <!-- JavaScript Libraries -->
+    <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.2.3/dist/js/bootstrap.bundle.min.js"></script>
+    <script src="https://unpkg.com/aos@2.3.1/dist/aos.js"></script>
+    
+    <!-- Custom JavaScript -->
+    <script>
+        // Initialize AOS animation
+        AOS.init({
+            duration: 800,
+            easing: 'ease-in-out',
+            once: true
+        });
+        
+        // Quiz Script
+        document.addEventListener('DOMContentLoaded', function() {
+            const quizQuestions = [
+                {
+                    question: "Qual é a maneira correta de armazenar a maioria dos medicamentos?",
+                    options: [
+                        "No banheiro, para fácil acesso",
+                        "Em local seco, fresco e protegido da luz solar",
+                        "No congelador, para maior durabilidade",
+                        "Dentro do carro, para ter sempre à mão"
+                    ],
+                    correct: 1,
+                    feedback: "A maioria dos medicamentos deve ser armazenada em local seco, fresco e protegido da luz solar direta. O banheiro não é recomendado devido à umidade, e temperaturas extremas (como no congelador ou carro) podem danificar os medicamentos."
+                },
+                {
+                    question: "O que fazer quando esquecer de tomar uma dose do medicamento?",
+                    options: [
+                        "Tomar duas doses na próxima vez",
+                        "Tomar assim que lembrar, se não estiver perto da próxima dose",
+                        "Parar de tomar o medicamento completamente",
+                        "Nenhuma das alternativas"
+                    ],
+                    correct: 1,
+                    feedback: "Se você esquecer uma dose, tome assim que lembrar, a menos que esteja perto do horário da próxima dose. Nunca tome duas doses para compensar. Alguns medicamentos têm protocolos específicos - consulte sempre seu médico ou farmacêutico."
+                },
+                {
+                    question: "Qual destes medicamentos NÃO deve ser misturado com álcool?",
+                    options: [
+                        "Paracetamol",
+                        "Dipirona",
+                        "Omeprazol",
+                        "Todos os acima"
+                    ],
+                    correct: 3,
+                    feedback: "Todos esses medicamentos podem ter interações com álcool. O paracetamol combinado com álcool aumenta o risco de danos ao fígado. A dipirona pode potencializar os efeitos sedativos do álcool. Omeprazol pode aumentar a absorção de álcool. O ideal é evitar álcool quando estiver usando qualquer medicamento."
+                },
+                {
+                    question: "Como descartar medicamentos vencidos corretamente?",
+                    options: [
+                        "No lixo comum",
+                        "No vaso sanitário",
+                        "Em pontos de coleta específicos",
+                        "Queimando-os"
+                    ],
+                    correct: 2,
+                    feedback: "Medicamentos vencidos devem ser descartados em pontos de coleta específicos, como farmácias participantes de programas de descarte ou Unidades Básicas de Saúde. Descarte no lixo comum ou vaso sanitário pode contaminar o meio ambiente."
+                },
+                {
+                    question: "Quais são sinais de uma possível reação alérgica a medicamentos?",
+                    options: [
+                        "Erupções cutâneas e coceira",
+                        "Inchaço no rosto ou língua",
+                        "Dificuldade para respirar",
+                        "Todos os acima"
+                    ],
+                    correct: 3,
+                    feedback: "Todos são sinais de possível reação alérgica. Erupções cutâneas e coceira podem indicar reação leve, enquanto inchaço facial e dificuldade respiratória são sinais de reação grave (anafilaxia) que requer atendimento médico imediato."
+                }
+            ];
+            
+            let currentQuestion = 0;
+            let score = 0;
+            let userAnswers = [];
+            
+            const questionElement = document.getElementById('quiz-question');
+            const optionsElement = document.getElementById('quiz-options');
+            const feedbackElement = document.getElementById('quiz-feedback');
+            const prevButton = document.getElementById('prev-question');
+            const nextButton = document.getElementById('next-question');
+            const progressBar = document.getElementById('quiz-progress');
+            const counterElement = document.getElementById('quiz-counter');
+            const quizArea = document.getElementById('quiz-area');
+            const resultsArea = document.getElementById('quiz-results');
+            const scoreElement = document.getElementById('quiz-score');
+            const messageElement = document.getElementById('quiz-message');
+            const restartButton = document.getElementById('restart-quiz');
+            
+            function loadQuestion() {
+                const question = quizQuestions[currentQuestion];
+                questionElement.textContent = question.question;
+                
+                optionsElement.innerHTML = '';
+                question.options.forEach((option, index) => {
+                    const optionElement = document.createElement('div');
+                    optionElement.className = 'quiz-option';
+                    if (userAnswers[currentQuestion] === index) {
+                        optionElement.classList.add('selected');
+                    }
+                    optionElement.textContent = option;
+                    optionElement.dataset.index = index;
+                    optionElement.addEventListener('click', selectOption);
+                    optionsElement.appendChild(optionElement);
+                });
+                
+                if (userAnswers[currentQuestion] !== undefined) {
+                    showFeedback();
+                } else {
+                    feedbackElement.style.display = 'none';
+                }
+                
+                prevButton.disabled = currentQuestion === 0;
+                nextButton.textContent = currentQuestion === quizQuestions.length - 1 ? 'Finalizar' : 'Próxima';
+                progressBar.style.width = `${(currentQuestion + 1) / quizQuestions.length * 100}%`;
+                counterElement.textContent = `Pergunta ${currentQuestion + 1} de ${quizQuestions.length}`;
+            }
+            
+            function selectOption(e) {
+                const selectedOption = e.target;
+                const options = document.querySelectorAll('.quiz-option');
+                
+                options.forEach(option => {
+                    option.classList.remove('selected');
+                });
+                
+                selectedOption.classList.add('selected');
+                userAnswers[currentQuestion] = parseInt(selectedOption.dataset.index);
+                showFeedback();
+            }
+            
+            function showFeedback() {
+                const question = quizQuestions[currentQuestion];
+                const userAnswer = userAnswers[currentQuestion];
+                
+                if (userAnswer === undefined) return;
+                
+                feedbackElement.textContent = question.feedback;
+                feedbackElement.className = 'quiz-feedback show ' + 
+                    (userAnswer === question.correct ? 'correct' : 'incorrect');
+                feedbackElement.style.display = 'block';
+            }
+            
+            function nextQuestion() {
+                if (userAnswers[currentQuestion] === undefined) {
+                    alert('Por favor, selecione uma resposta antes de prosseguir.');
+                    return;
+                }
+                
+                if (currentQuestion < quizQuestions.length - 1) {
+                    currentQuestion++;
+                    loadQuestion();
+                } else {
+                    showResults();
+                }
+            }
+            
+            function prevQuestion() {
+                if (currentQuestion > 0) {
+                    currentQuestion--;
+                    loadQuestion();
+                }
+            }
+            
+            function showResults() {
+                score = 0;
+                for (let i = 0; i < quizQuestions.length; i++) {
+                    if (userAnswers[i] === quizQuestions[i].correct) {
+                        score++;
+                    }
+                }
+                
+                scoreElement.textContent = `Você acertou ${score} de ${quizQuestions.length} perguntas`;
+                
+                if (score === quizQuestions.length) {
+                    messageElement.textContent = 'Parabéns! Você demonstrou excelente conhecimento sobre o uso correto de medicamentos!';
+                } else if (score >= quizQuestions.length * 0.7) {
+                    messageElement.textContent = 'Muito bom! Você tem um bom conhecimento, mas ainda pode aprender mais.';
+                } else if (score >= quizQuestions.length * 0.4) {
+                    messageElement.textContent = 'Você acertou algumas questões, mas ainda há muito para aprender sobre medicamentos.';
+                } else {
+                    messageElement.textContent = 'Seu conhecimento sobre medicamentos precisa melhorar. Recomendamos que revise nossos materiais educativos.';
+                }
+                
+                quizArea.style.display = 'none';
+                resultsArea.style.display = 'block';
+            }
+            
+            function restartQuiz() {
+                currentQuestion = 0;
+                score = 0;
+                userAnswers = [];
+                quizArea.style.display = 'block';
+                resultsArea.style.display = 'none';
+                loadQuestion();
+            }
+            
+            prevButton.addEventListener('click', prevQuestion);
+            nextButton.addEventListener('click', nextQuestion);
+            restartButton.addEventListener('click', restartQuiz);
+            
+            // Contact Form
+            const contactForm = document.getElementById('contactForm');
+            contactForm.addEventListener('submit', function(e) {
+                e.preventDefault();
+                alert('Mensagem enviada com sucesso! Entraremos em contato em breve.');
+                contactForm.reset();
+            });
+            
+            // Load first question
+            loadQuestion();
+        });
+    </script>
+</body>
+</html>
